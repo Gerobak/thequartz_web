@@ -1,4 +1,9 @@
-# README
+![alt text](https://github.com/Gerobak/thequartz_web/blob/quartz/app/assets/images/qz.jpg)
+
+# TheQuart Web
+
+Contola Sasingatura Saprawala
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
