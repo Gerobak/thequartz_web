@@ -4,7 +4,7 @@
     <title>Quartz</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path('qz.jpg') %>
     <%= stylesheet_link_tag    'application', media: 'all',
         'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application',
@@ -12,6 +12,9 @@
   </head>
 
   <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">TheQuartz</a>
@@ -45,7 +48,6 @@
         </form>
       </div>
     </nav> -->
-
 
     <div class="container">
       <header class="blog-header py-3">
