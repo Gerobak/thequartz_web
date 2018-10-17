@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quartz</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('qz.jpg') %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+        'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application',
+        'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">TheQuartz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" <%= link_to "Home", home_path %>><span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" <%= link_to "Create Post", new_post_path %>></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav> -->
+
+    <div class="container">
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1">
+            <a class="text-muted" href="#"><img src="/assets/qz.jpg" style="height: 75px;"></a>
+          </div>
+          <div class="col-4 text-center">
+            <a class="blog-header-logo text-dark" href="#"><h2 style="font-family:
+                    courier new;">Quartz Gallery</h2></a>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <a class="text-muted" href="#">
+              <svg xmlns="search.png" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
+            </a>
+            <a class="btn btn-sm btn-outline-secondary" href="#">Member</a>
+          </div>
+        </div>
+      </header>
+<hr>
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex">
+          <a class="p-2 text-muted" <%= link_to "Home", home_path %></a>
+          <a class="p-2 text-muted" <%= link_to "About", about_path %></a>
+          <a class="p-2 text-muted" <%= link_to "Create Post", new_post_path %></a>
+        </nav>
+      </div>
+
+    <hr><hr><br>
+    <%= yield %>
+    <br><br><br><hr><hr><br>
+      <footer class="footer">
+          <div class="container">
+          <span class="text-muted">&copy; TheQuartz 2016-2018</span>
+        </div>
+        </footer>
+  </body>
+</html>
