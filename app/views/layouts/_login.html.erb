@@ -16,17 +16,18 @@
       </div>
 
       <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
+        <label class="form-check-label" style="margin-left: 20px;">
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          <%= f.label :remember_me, style: "padding-bottom: .15rem" %>
+        </label>
       <% end -%>
 
       <div class="actions">
-            <%= f.submit "Log in", :class => "btn btn-outline-secondary btn-md" %>
-        <% end %>
+            <%= button_tag type: 'submit', :class => "btn btn-light btn-outline-secondary btn-md" do %>
+                  <i class="fa fa-sign-in"></i>
+           <% end %>
+    <% end %>
 
 
         </div>
 </div>
-
