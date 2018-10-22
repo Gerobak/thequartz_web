@@ -51,6 +51,7 @@
           <a class="p-2 text-muted" <%= link_to "About", about_path %></a>
           <% if user_signed_in? %>
             <a class="p-2 text-muted" <%= link_to "Create Post", new_post_path %></a>
+            <a class="p-2 text-muted" <%= link_to "Gallery", galleries_path %></a>
           <% end %>
         </nav>
       </div>
@@ -60,6 +61,7 @@
     <br><br><br><hr><hr><br>
       <footer class="footer">
           <div class="container">
+          <%= link_to 'Download', download_download_url %>
           <span class="text-muted">&copy; TheQuartz 2016-2018</span>
         </div>
         </footer>

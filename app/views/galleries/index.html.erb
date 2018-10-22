@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Galleries</h1>
+<div class="row">
+    <% @galleries.each do |gallery| %>
+    <div class="col" >
+      <div class="image">
+        <center>
+
+          <div class="containerimage">
+          <%= image_tag gallery.image_url(:thumb), class: 'image' %>
+            <div class="overlay">
+              <p><%= link_to 'Show', gallery, style: "color:gold; text-decoration: none" %></p>
+              <strong><%= gallery.title %></strong><br>
+            <%= gallery.description %>
+            </div>
+        </div>
+        </center>
+      </div>
+      </div>
+    <% end %>
+  </div>
+<br>
+<br>
+
+<%= link_to 'New Foto', new_gallery_path %>

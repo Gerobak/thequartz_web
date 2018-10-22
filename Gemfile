@@ -20,6 +20,7 @@ gem 'devise', '~> 4.2'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+gem "haml"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -78,4 +79,11 @@ gem 'jquery-rails', '~> 4.0', '>= 4.0.5'
 gem "font-awesome-rails"
 
 # File upload
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<%= link_to galleries_path do %>
+<i class="fa fa-arrow-left" style="font-size:36px;color:black"></i>
+<% end %>
+<center>
+<div class="containershowimage">
+<%= image_tag(@gallery.image_url(:thumb).to_s) %>
+<center>
+  <div class="back">
+    <p>
+      <h1><strong><%= @gallery.title %></strong></h1>
+    </p>
+
+    <p>
+      <%= @gallery.description %>
+    </p>
+  </div>
+</center>
+</div>
+
+<br>
+  <%= link_to @gallery, method: :delete, data: { confirm: 'Are you sure?' } do %>
+  <i class="fa fa-trash-o" style="font-size:28px;color:red"></i>
+  <% end %> &nbsp;
+  <%= link_to edit_gallery_path(@gallery) do %>
+  <i class="fa fa-edit" style="font-size:28px;color:red"></i>
+  <% end %>
+
+</center>
+
+
