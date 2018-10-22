@@ -79,3 +79,6 @@ gem "font-awesome-rails"
 
 # File upload
 gem 'carrierwave', '~> 1.0'
+
+# Calendar
+gem 'jquery-ui-rails'

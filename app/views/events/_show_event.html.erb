@@ -1,0 +1,48 @@
+
+<div class="container">
+  <h2>Event</h2>
+  <!-- The Modal -->
+  <div class="modal fade" id="show-ev">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p id="notice"><%= notice %></p>
+
+            <% @events.each do |event| %>
+              <p>
+                <strong>Title:</strong>
+                <%= @event.title %>
+              </p>
+
+              <p>
+                <strong>Date:</strong>
+                <%= @event.date %>
+              </p>
+
+              <p>
+                <strong>Detail:</strong>
+                <%= @event.detail %>
+              </p>
+
+              <%= link_to 'Edit', edit_event_path(@event) %> |
+              <%= link_to 'Back', events_path %>
+        </div>
+        <% end %>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

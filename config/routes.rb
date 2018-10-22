@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   devise_for :users, :controllers => { :sessions => "sessions" }
   root 'posts#index', as: 'home'
   get 'about' => 'pages#about', as: 'about'
