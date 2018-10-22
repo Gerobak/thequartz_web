@@ -11,6 +11,7 @@
 > Features: 
  > - Login
  > - Register
+ > - Calendar
  > - Update profile
  > - Share media
  > - Web game
