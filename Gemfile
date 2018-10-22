@@ -79,6 +79,7 @@ gem 'jquery-rails', '~> 4.0', '>= 4.0.5'
 gem "font-awesome-rails"
 
 # File upload
+<<<<<<< HEAD
 gem 'carrierwave'
 gem 'mini_magick'
 
@@ -87,3 +88,9 @@ gem 'mini_magick'
 
 
 
+=======
+gem 'carrierwave', '~> 1.0'
+
+# Calendar
+gem 'jquery-ui-rails'
+>>>>>>> fa711ae48ea17591aa8410fd49d3c0b3e0d3224b

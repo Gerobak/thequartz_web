@@ -51,7 +51,11 @@
           <a class="p-2 text-muted" <%= link_to "About", about_path %></a>
           <% if user_signed_in? %>
             <a class="p-2 text-muted" <%= link_to "Create Post", new_post_path %></a>
+<<<<<<< HEAD
             <a class="p-2 text-muted" <%= link_to "Gallery", galleries_path %></a>
+=======
+            <a class="p-2 text-muted" <%= link_to "Calendar", events_path %></a>
+>>>>>>> fa711ae48ea17591aa8410fd49d3c0b3e0d3224b
           <% end %>
         </nav>
       </div>
