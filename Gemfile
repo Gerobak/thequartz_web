@@ -79,3 +79,5 @@ gem "font-awesome-rails"
 
 # File upload
 gem 'carrierwave', '~> 1.0'
+
+gem 'slim'
