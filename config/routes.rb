@@ -10,8 +10,22 @@ Rails.application.routes.draw do
   resources :pages
   resources :posts
 
-  namespace :users do
-    resources :sessions, only: [:create, :destroy]
-  end
+  # namespace :users do
+  #   resources :sessions, only: [:create, :destroy]
+  # end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  apipie
+  namespace :api do
+    namespace :v1 do
+      post "users/register"
+      post "users/login"
+      post "users/logout"
+      post "users/forgot_password"
+      post "users/resend_confirmation"
+      post "users/update"
+      post "users/update_password"
+    end
+  end
+
 end

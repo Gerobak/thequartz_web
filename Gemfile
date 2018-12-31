@@ -81,3 +81,6 @@ gem "font-awesome-rails"
 gem 'carrierwave', '~> 1.0'
 
 gem 'slim'
+
+# handle api
+gem 'apipie-rails'
