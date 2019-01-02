@@ -6,6 +6,10 @@ class Api::V1::UsersController < Api::V1::ApiController
   skip_before_action :verify_authenticity_token
   before_action :check_user_authentication, only: [:logout, :update, :update_password]
 
+  def index
+    @users = User.all
+  end
+
   respond_to :json
 
   api :POST, "/v1/users/register", "Register Process"
@@ -23,9 +27,7 @@ class Api::V1::UsersController < Api::V1::ApiController
 
   # OPTIMIZE create private params method and use strong parameter (done)
   def register
-    user = User.new(user_params.except!(:device_id, :device_model))
-    user.build_mobile_platform(device_id: user_params[:device_id], device_model: user_params[:device_model])
-
+    user = User.new
     if user.save
       @user = user
     else
@@ -257,8 +259,7 @@ class Api::V1::UsersController < Api::V1::ApiController
     end
 
     def user_params
-      params.permit(:authentication_token, :email, :current_password, :password, :password_confirmation, :first_name, :last_name,
-        :address, :longitude, :latitude, :phone_number, :name, :device_id, :device_model, :description)
+      params.permit(:authentication_token, :email, :current_password, :password, :password_confirmation)
     end
 
     #
