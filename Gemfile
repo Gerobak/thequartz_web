@@ -84,3 +84,4 @@ gem 'slim'
 
 # handle api
 gem 'apipie-rails'
+gem 'simple_token_authentication', '~> 1.0'

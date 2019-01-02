@@ -141,27 +141,27 @@ class Api::V1::UsersController < Api::V1::ApiController
     end
   end
 
-  api :GET, "/v1/users/profile", "Get profile of current user"
-  formats ['json']
-  param :authentication_token, String, desc: "Authentication token of User"
-  description "Get profile information of current user"
+  # api :GET, "/v1/users/profile", "Get profile of current user"
+  # formats ['json']
+  # param :authentication_token, String, desc: "Authentication token of User"
+  # description "Get profile information of current user"
 
-  def profile
-    @profile = @user
-  end
+  # def profile
+  #   @profile = @user
+  # end
 
-  api :POST, "/v1/users/hide_address", "Ability for show or hide address user"
-  formats ['json']
-  param :authentication_token, String, desc: "Authentication token of User"
-  param :hide, ['t', 'f'], desc: "Hide address to (t = true, or f = false)", required: true
-  description "Ability for show or hide address user"
+  # api :POST, "/v1/users/hide_address", "Ability for show or hide address user"
+  # formats ['json']
+  # param :authentication_token, String, desc: "Authentication token of User"
+  # param :hide, ['t', 'f'], desc: "Hide address to (t = true, or f = false)", required: true
+  # description "Ability for show or hide address user"
 
-  def hide_address
-    unless @user.update_attributes(hide_address: params[:hide])
-      @error = 1
-      @errors = @user.errors
-    end
-  end
+  # def hide_address
+  #   unless @user.update_attributes(hide_address: params[:hide])
+  #     @error = 1
+  #     @errors = @user.errors
+  #   end
+  # end
 
   api :POST, "/v1/users/update", "Update profile of current user"
   formats ['json']
@@ -188,22 +188,22 @@ class Api::V1::UsersController < Api::V1::ApiController
     end
   end
 
-  api :POST, "/v1/users/upload_photo", "Upload photo profile user"
-  formats ['json']
-  param :authentication_token, String, desc: "Authentication token of User"
-  description "Upload photo profile user [Important : Add parameter called 'name' for file upload]"
+  # api :POST, "/v1/users/upload_photo", "Upload photo profile user"
+  # formats ['json']
+  # param :authentication_token, String, desc: "Authentication token of User"
+  # description "Upload photo profile user [Important : Add parameter called 'name' for file upload]"
 
-  def upload_photo
-    photo = @user.attachment || @user.build_attachment
-    photo.name = user_params[:name]
+  # def upload_photo
+  #   photo = @user.attachment || @user.build_attachment
+  #   photo.name = user_params[:name]
 
-    if photo.save
-      @photo = photo
-    else
-      @error = 1
-      @errors = photo.errors
-    end
-  end
+  #   if photo.save
+  #     @photo = photo
+  #   else
+  #     @error = 1
+  #     @errors = photo.errors
+  #   end
+  # end
 
   api :POST, "/v1/users/update_password", "Update password of current user"
   formats ['json']
@@ -224,23 +224,23 @@ class Api::V1::UsersController < Api::V1::ApiController
     end
   end
 
-  api :GET, "/v1/users/delete_photo", "Delete photo profile user"
-  formats ['json']
-  param :authentication_token, String, desc: "Authentication token of User"
-  description "Delete photo profile user "
+  # api :GET, "/v1/users/delete_photo", "Delete photo profile user"
+  # formats ['json']
+  # param :authentication_token, String, desc: "Authentication token of User"
+  # description "Delete photo profile user "
 
-  def delete_photo
-    photo = @user.attachment
+  # def delete_photo
+  #   photo = @user.attachment
 
-    if photo
-      photo.remove_name!
-      photo.destroy
-      @photo = photo
-    else
-      @object = "Photo"
-      render "api/v1/errors/404", status: 404
-    end
-  end
+  #   if photo
+  #     photo.remove_name!
+  #     photo.destroy
+  #     @photo = photo
+  #   else
+  #     @object = "Photo"
+  #     render "api/v1/errors/404", status: 404
+  #   end
+  # end
 
   def confirmed
     render text: 'Confirmation success you can login on Mobile App'
